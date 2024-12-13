@@ -1,4 +1,4 @@
-# Welcome to the operating system workshop with [ ==eXperimental Operating Sytem== ](http://exposnitc.github.io/index.html)
+# Welcome to the operating system workshop with [eXperimental Operating Sytem](http://exposnitc.github.io/index.html)
 
 You can find all the items that you might want along your cruise down the line completing the stages in the roadmap.
 
