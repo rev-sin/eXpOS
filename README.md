@@ -2,7 +2,7 @@
 
 You can find all the items that you might want along your cruise down the line completing the stages in the roadmap.
 
-# Prerequisites before we start following the setup instructions:
+## Prerequisites before we start following the setup instructions:
 
 1. You are assumed to be on a linux based machine
 2. Works perfectly on Ubuntu 20.04 (also docker is fine)
