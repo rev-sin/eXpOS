@@ -1,51 +1,20 @@
 
-1. make a directory for the project
+1. to load a file into XSM disk
 
-`mdkir eXpOS`
+```
+$ cd $HOME/myexpos/xfs-interface
+$ ./xfs-interface
+# load --data $HOME/myexpos/sample.dat
+```
 
-4. create these items on your directory
-
+3. to copy the entries from a specific block of the loaded file, here for instance, blocks 3 4 is where inode_table contents can be found
 ````
-cd eXpOS
-touch Dockerfile
-mkdir workdir
+# copy 3 4 $HOME/myexpos/inode_table.txt
 ````
+4. instead you can also use dump to generate files ie, inode table to the xfs-interface directory
 
-3. Add these to the Dockerfile
+`dump --inodeusertable`
 
-```
-FROM ubuntu:20.04
+5. copy the data blocks
 
-RUN apt-get update \
-    && apt-get install -y bison flex libreadline-dev libc6-dev libfl-dev wget vim make gcc curl unzip build-essential
-
-RUN useradd -m expos
-USER expos
-
-RUN cd /home/expos \
-    && curl -sSf https://raw.githubusercontent.com/eXpOSNitc/expos-bootstrap/main/download.sh | sh \
-    && cd /home/expos/myexpos \
-    && make
-
-WORKDIR /home/expos/myexpos
-```
-
-4. Build the project
-
-```
-docker build -t expos:ubuntu20.04 .
-```
-
-5. We'll start an instance of Container and map the local folder `workdir` into `/home/expos/workdir` directory of container.
-
-```
-docker run -v $PWD/workdir:/home/expos/myexpos/workdir -d --name expos -i expos:ubuntu20.04 
-```
-
-6. connecting to the container
-
-```
-docker start expos # if the container instance is not already running
-
-docker exec -it expos /bin/bash # to get a bash shell inside the container
-```
+`# copy 69 69 $HOME/myexpos/data.txt`
