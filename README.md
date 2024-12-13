@@ -1,20 +1,11 @@
+# Welcome to the operating system workshop with [ ==eXperimental Operating Sytem== ](http://exposnitc.github.io/index.html)
 
-1. to load a file into XSM disk
+You can find all the items that you might want along your cruise down the line completing the stages in the roadmap.
 
-```
-$ cd $HOME/myexpos/xfs-interface
-$ ./xfs-interface
-# load --data $HOME/myexpos/sample.dat
-```
+# Prerequisites before we start following the setup instructions:
 
-3. to copy the entries from a specific block of the loaded file, here for instance, blocks 3 4 is where inode_table contents can be found
-````
-# copy 3 4 $HOME/myexpos/inode_table.txt
-````
-4. instead you can also use dump to generate files ie, inode table to the xfs-interface directory
+1. You are assumed to be on a linux based machine
+2. Works perfectly on Ubuntu 20.04 (also docker is fine)
 
-`dump --inodeusertable`
-
-5. copy the data blocks
-
-`# copy 69 69 $HOME/myexpos/data.txt`
+If you choose to work on windows, either install Ubuntu 20.04 on WSL2 or install docker and follow [stage-1](https://github.com/rev-sin/eXpOS/tree/stage-2) to get started with docker
+ 
